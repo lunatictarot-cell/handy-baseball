@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport-fit=cover: iOS Safe Area를 env()로 제어하기 위함 -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover"
+    />
+    <title>핸디 베이스볼</title>
+    <style>
+      :root {
+        --bg: #0e1b2a;
+      }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background: var(--bg);
+        overflow: hidden;
+        overscroll-behavior: none; /* 당겨서 새로고침/바운스 방지 */
+        touch-action: none; /* 제스처 스크롤 방지(인게임 입력 보호) */
+        -webkit-user-select: none;
+        user-select: none;
+      }
+      /* Safe Area: 콘텐츠가 Dynamic Island/홈 인디케이터를 침범하지 않게 */
+      #app {
+        position: fixed;
+        inset: 0;
+        padding: env(safe-area-inset-top) env(safe-area-inset-right)
+          env(safe-area-inset-bottom) env(safe-area-inset-left);
+        box-sizing: border-box;
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/index-C14h5WW4.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-D3ZEp-cl.css">
+  </head>
+  <body>
+    <!-- React 앱 셸 마운트 지점. 캔버스는 CanvasHost가 동적으로 만든다. -->
+    <div id="app"></div>
+  </body>
+</html>
